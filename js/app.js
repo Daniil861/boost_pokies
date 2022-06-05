@@ -229,6 +229,7 @@
         setTimeout((() => {
             document.querySelector(".field__button-box").classList.add("_active");
             create_history_item();
+            document.querySelector(".field__button-back").classList.remove("_hold");
         }), 6e3);
     }
     function reset_game() {
@@ -239,6 +240,7 @@
         if (document.querySelector(".field__button-box").classList.contains("_win")) document.querySelector(".field__button-box").classList.remove("_win"); else if (document.querySelector(".field__button-box").classList.contains("_loose")) document.querySelector(".field__button-box").classList.remove("_loose"); else if (document.querySelector(".field__button-box").classList.contains("_draw")) document.querySelector(".field__button-box").classList.remove("_draw");
         sessionStorage.removeItem("current-protect");
         if (document.querySelector(".actions-field__protect img").classList.contains("_anim")) document.querySelector(".actions-field__protect img").classList.remove("_anim");
+        document.querySelector(".field__button-back").classList.add("_hold");
     }
     const config_shop = {
         price_1: 2500,
@@ -305,7 +307,7 @@
             start_game();
             document.querySelectorAll(".field__heroe").forEach((el => el.classList.add("_active")));
         }
-        if (targetElement.closest(".field__button")) {
+        if (targetElement.closest(".field__button-back")) {
             document.querySelector(".background_game").classList.remove("_hide");
             document.querySelector(".battle").classList.add("_hide");
             reset_game();

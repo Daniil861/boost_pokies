@@ -1006,6 +1006,20 @@ body._hold {
   display: grid;
   grid-template: 1fr 3.8125rem/1fr;
 }
+.field__button-back {
+  background: url("../img/icons/btn-arrow-bottom.png") center/contain no-repeat;
+  position: absolute;
+  top: 0.3125rem;
+  left: 0.3125rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  transform: rotate(90deg);
+  z-index: 5;
+}
+.field__button-back._hold {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .field__heroes {
   position: relative;
 }
@@ -1097,9 +1111,6 @@ body._hold {
       font-size: calc(1.625rem + 0.625 * (100vw - 34.375rem) / 15.625);
     }
   }
-}
-.field__button:active {
-  transform: translateY(2px);
 }
 .field__heroe {
   position: absolute;
